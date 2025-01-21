@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Template</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">TextUtilities</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">
+              Home <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact Us</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            Search
+          </button>
+        </form>
+      </div>
+    </nav>
+
+    <!-- Success Alert -->
+    <div class="container mt-3">
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Welcome to TextUtilities! </strong>You can do anything with your
+        text here!
+        <button
+          type="button"
+          class="close"
+          data-dismiss="alert"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+<form action="/analyze" method="post"> 
+     <!-- Content -->
+      {% csrf_token %}
+    <div class="container mt-5">
+      <!-- Text Area -->
+      <textarea
+        name="text"
+        class="form-control mb-3"
+        rows="5"
+        placeholder="Enter your text here..."
+      ></textarea>
+
+      <!-- Toggle Bar -->
+      <div>
+        <div class="custom-control custom-switch">
+          <input
+            type="checkbox"
+            name="removepunc"
+            class="custom-control-input"
+            id="removepunc"
+          />
+          <label class="custom-control-label" for="removepunc"
+            >Remove Punctuation</label
+          >
+        </div>
+        <div class="custom-control custom-switch mt-2">
+          <input
+            type="checkbox"
+            name="fullcaps"
+            class="custom-control-input"
+            id="fullcaps"
+          />
+          <label class="custom-control-label" for="fullcaps">UPPER CASE</label>
+        </div>
+        <div class="custom-control custom-switch mt-2">
+          <input
+            type="checkbox"
+            name="newlineremover"
+            class="custom-control-input"
+            id="newlineremover"
+          />
+          <label class="custom-control-label" for="newlineremover"
+            >Remove New Lines</label
+          >
+        </div>
+        <div class="custom-control custom-switch mt-2">
+          <input
+            type="checkbox"
+            name="extraspaceremover"
+            class="custom-control-input"
+            id="extraspaceremover"
+          />
+          <label class="custom-control-label" for="extraspaceremover"
+            >Remove Extra Space</label
+          >
+        </div>
+        {% comment %} <div class="custom-control custom-switch mt-2">
+          <input
+            type="checkbox"
+            name="charactercounter"
+            class="custom-control-input"
+            id="charactercounter"
+          />
+          <label class="custom-control-label" for="charactercounter"
+            >Character Counter</label
+          >
+        </div> {% endcomment %}
+      </div>
+      <br />
+      <button type="submit" class="btn btn-dark">Analyze Text</button>
+    </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
