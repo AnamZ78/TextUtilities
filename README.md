@@ -1,9 +1,5 @@
 # TextUtilities
 
-## Technologies Used:
-- Python
-- Django
-- Sqllite
-
-## Languages:
-- Python
+**Public**  
+**Languages**: Python  
+**Tech Stack**: Python, Django, SQLite  
